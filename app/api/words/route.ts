@@ -11,7 +11,7 @@ export async function GET(req: Request) {
       where: { status: 'approved', ...(search ? { OR: [{ word: { contains: search, mode: 'insensitive' } }, { meaning: { contains: search, mode: 'insensitive' } }] } : {}), ...(category ? { category } : {}) },
       orderBy: { createdAt: 'desc' }, take: 50,
     })
-    const data = words.map((w) => ({ ...w, audio_url: (w as any).audioPath }))
+   const data = words.map((w: any) => ({ ...w, audio_url: w.audioPath }))
     return NextResponse.json({ status: 'success', data })
   } catch (e: any) { return NextResponse.json({ status: 'error', message: e.message, data: [] }) }
 }
