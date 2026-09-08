@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.word-title { @apply font-bold text-lg; }
+.toned-word { @apply text-green-600 font-semibold; }
+.badge-category { @apply bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full; }
