@@ -2,12 +2,12 @@
   "name": "lexicon.oredola.dev",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "db:push": "prisma db push",
-    "db:generate": "prisma generate"
-  },
+  "dev": "next dev",
+  "build": "prisma generate && next build",
+  "postinstall": "prisma generate",
+  "start": "next start",
+  "lint": "next lint"
+},
   "dependencies": {
     "next": "^15.0.3",
     "react": "^18.3.1",
